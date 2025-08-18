@@ -1,11 +1,8 @@
+using System.Collections.Generic;
 using Unity.Entities;
 
-// main player tag 为左玩家;
-public struct IMainPlayerTagData : IComponentData
-{
-}
+// 第一（左） player tag;
+public struct IPlayer1TagData : IComponentData { }
 
-// secondary player tag 为右玩家；
-public struct ISecondaryPlayerTagData : IComponentData
-{
-}
+// 第二（右） player tag；
+public struct IPlayer2TagData : IComponentData { }

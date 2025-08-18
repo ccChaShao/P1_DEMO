@@ -1,3 +1,5 @@
+using System;
+using Sirenix.OdinInspector;
 using Unity.Entities;
 using UnityEngine;
 
@@ -13,23 +15,23 @@ class PlayerAuthoringBaker : Baker<PlayerAuthoring>
     {
         Entity entity = GetEntity(authoring, TransformUsageFlags.Dynamic);
 
-        // player tag
+        // tag
         switch (authoring.playerType)
         {
             case PlayerType.MainPlayer:
-                AddComponent<IMainPlayerTagData>(entity);
+                AddComponent<IPlayer1TagData>(entity);
                 break;
             case PlayerType.SecondaryPlayer:
-                AddComponent<ISecondaryPlayerTagData>(entity);
+                AddComponent<IPlayer2TagData>(entity);
                 break;
         }
-        
-        // input
-        IPlayerInputData inputData = new();
-        AddComponent(entity, inputData);
         
         // move
         IMoveData moveData = new();
         AddComponent(entity, moveData);
+        
+        // input
+        IPlayerInputData inputData = new();
+        AddComponent(entity, inputData);
     }
 }

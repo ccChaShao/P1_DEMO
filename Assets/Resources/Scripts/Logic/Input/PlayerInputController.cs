@@ -9,11 +9,8 @@ using InputAction = UnityEngine.InputSystem.InputAction;
 
 public class PlayerInputController : MonoBehaviour
 {
-    [Title("player_state_1")] 
+    [Title("player_state")] 
     [ShowInInspector] private bool isMoveDirty_1;
-        
-    [Title("player_state_2")] 
-    [ShowInInspector] private bool isMoveDirty_2;           //TODO 预留
     
     private EntityManager entityManager;
 
@@ -24,14 +21,7 @@ public class PlayerInputController : MonoBehaviour
 
     private void Update()
     {
-        // 玩家一输入
         UpdateEntityMove(PlayerRegistrationSystem.playerEntity_1, isMoveDirty_1?InputService.Instance.moveValue:Vector2.zero);
-        
-        // 玩家二输入
-        if (!PlayerRegistrationSystem.playerEntity_2.IsUnityNull())
-        {
-            
-        }
     }
 
     private void OnEnable()

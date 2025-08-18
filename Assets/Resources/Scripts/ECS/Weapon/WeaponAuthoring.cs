@@ -3,22 +3,21 @@ using Unity.Entities;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterAuthoring))]
-class EnemyAuthoring : MonoBehaviour
+class WeaponAuthoring : MonoBehaviour
 {
-    public WeaponType weaponType;
+    public IWeaponData weaponData;
 }
 
-class EnemyAuthoringBaker : Baker<EnemyAuthoring>
+class WeaponAuthoringBaker : Baker<WeaponAuthoring>
 {
-    public override void Bake(EnemyAuthoring authoring)
+    public override void Bake(WeaponAuthoring authoring)
     {
         Entity entity = GetEntity(authoring, TransformUsageFlags.Dynamic);
         
-        // tag
-        IEnemyTagData enemyTag = new();
-        AddComponent(entity, enemyTag);
+        // weapon data
+        AddComponent(entity, authoring.weaponData);
         
-        // move 
+        // move
         IMoveData moveData = new();
         AddComponent(entity, moveData);
     }

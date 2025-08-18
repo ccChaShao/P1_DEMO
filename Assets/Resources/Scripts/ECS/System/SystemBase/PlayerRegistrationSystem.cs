@@ -15,13 +15,13 @@ public partial class PlayerRegistrationSystem : SystemBase
 
     protected override void OnUpdate()
     {
-        Entities.WithAll<IMainPlayerTagData>().ForEach((Entity entity) =>
+        Entities.WithAll<IPlayer1TagData>().ForEach((Entity entity) =>
             {
                 playerEntity_1 = entity;
             }
         ).WithoutBurst().Run();
 
-        Entities.WithAll<IMainPlayerTagData>().ForEach((Entity entity) =>
+        Entities.WithAll<IPlayer1TagData>().ForEach((Entity entity) =>
             {
                 playerEntity_2 = entity;
             }
