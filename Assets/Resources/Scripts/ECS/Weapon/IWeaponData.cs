@@ -5,11 +5,14 @@ using Unity.Entities;
 public struct IWeaponData : IComponentData
 {
     [LabelText("发射间隔")] public float interval;
-    
-    [LabelText("发射次数")] public float times;
 }
 
 public struct ILineWeaponData : IComponentData
 {
     [LabelText("发射间隔")] public float interval;
+}
+
+public struct IAddWeaponEvent : IComponentData
+{
+    public int weaponId;
 }

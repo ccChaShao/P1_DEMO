@@ -11,7 +11,6 @@ using UnityEngine.Serialization;
 /// </summary>
 public partial class GameRoot : MonoSingleton<GameRoot>
 {
-    
     public EntityManager entityManager => World.DefaultGameObjectInjectionWorld.EntityManager;
     
     private void Awake()

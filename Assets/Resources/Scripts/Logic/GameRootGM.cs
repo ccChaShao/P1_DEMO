@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Entities;
 using UnityEngine;
 
 public partial class GameRoot
@@ -9,7 +10,13 @@ public partial class GameRoot
     {
         if (GUILayout.Button("添加【汉堡】武器", GUILayout.Height(50)))
         {
-            // entityManager.AddComponent<>()
+            Entity entity = entityManager.CreateEntity();
+            IAddWeaponEvent eventData = new()
+            {
+                weaponId = 1
+            };
+            entityManager.AddComponent<IAddWeaponEvent>(entity);
+            entityManager.SetComponentData(entity, eventData);
         }
     }
 }
