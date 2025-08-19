@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727829d5aa6fcfe42ba04ec79c4e95c0, type: 3}
+  m_Name: WeaponSO
+  m_EditorClassIdentifier: 
+  characterSoDatas:
+  - speed: 10
+    damge: 100
+    prefab: {fileID: 4134071768560778589, guid: 6205090514cb8074c85b6d42c6d5ce56, type: 3}

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class SOConfig
 {
-    public static CharacterResSO CharacterSoData;
+    public static CharacterSO CharacterSoData;
 }

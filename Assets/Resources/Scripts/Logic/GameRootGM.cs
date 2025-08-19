@@ -10,13 +10,6 @@ public partial class GameRoot
     {
         if (GUILayout.Button("添加【汉堡】武器", GUILayout.Height(50)))
         {
-            Entity entity = entityManager.CreateEntity();
-            IAddWeaponEvent eventData = new()
-            {
-                weaponId = 1
-            };
-            entityManager.AddComponent<IAddWeaponEvent>(entity);
-            entityManager.SetComponentData(entity, eventData);
         }
     }
 }
