@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3164559898107392247
+--- !u!1 &4134071768560778589
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6638110609741315998}
-  - component: {fileID: 1460667842651061086}
-  - component: {fileID: 6793449227289405261}
-  - component: {fileID: 498305260699126262}
+  - component: {fileID: 364845821489532214}
+  - component: {fileID: 3699323094602973731}
+  - component: {fileID: 770729655070804619}
   m_Layer: 0
-  m_Name: "\u53C9\u70E7_1"
+  m_Name: "\u4E00\u6761\u9C7C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6638110609741315998
+--- !u!4 &364845821489532214
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3164559898107392247}
+  m_GameObject: {fileID: 4134071768560778589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0255008, y: -0.26367205, z: 0}
+  m_LocalPosition: {x: -0.5829928, y: -1.8987718, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1460667842651061086
+--- !u!212 &3699323094602973731
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3164559898107392247}
+  m_GameObject: {fileID: 4134071768560778589}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,44 +74,30 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8cd633bbf86dac74591f86346fb29b9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 632b018ecba0cda438193bb4cb3a653b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.328, y: 1.328}
+  m_Size: {x: 0.3405128, y: 0.3405128}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6793449227289405261
+--- !u!114 &770729655070804619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3164559898107392247}
+  m_GameObject: {fileID: 4134071768560778589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69b3c6a386da64e4b90feb26d6a69d62, type: 3}
+  m_Script: {fileID: 11500000, guid: 45d51bde4fb7050469133c513c39fbd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData:
-    characterType: 0
-    health: 0
-    damge: 0
+  fishData:
     speed: 10
---- !u!114 &498305260699126262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3164559898107392247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc6588f2a2e484e40aac049c0c9fd9ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerType: 0
+    rotationSpeed: 0
+    perceptionRadius: 50
