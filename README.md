@@ -29,7 +29,7 @@ ECS:
 ECS：  
 - FishSchoolSystem —— 鱼群算法核心算法系统  
 - FishSpawnerSystem —— 鱼群生成系统  
-- FishClearerSystem —— 鱼群销毁系统
+- FishClearerSystem —— 鱼群销毁系统  
 流程：
   
 通过GM创建指令entity  
