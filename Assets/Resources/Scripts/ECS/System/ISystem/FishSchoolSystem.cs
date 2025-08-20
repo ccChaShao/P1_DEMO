@@ -39,7 +39,6 @@ public partial struct FishSchoolSystem : ISystem
             deltaTime = deltaTime,
             positions = positions,
             velocities = velocities,
-            // 后续配置
             separationWeight = fishSchool.separationWeight,
             alignmentWeight = fishSchool.alignmentWeight,
             cohesionWeight = fishSchool.cohesionWeight
@@ -85,16 +84,16 @@ public partial struct FishSchoolSystem : ISystem
 
                  if (distance > 0 && distance < fishData.perceptionRadius)
                  {
-                     // 分离规则
+                     // 分离规则（统计周围驱散方向）
                      if (distance < fishData.perceptionRadius)
                      {
                          separation += (currentPos - neighborPos) / distance;
                      }
                      
-                     // 对齐规则
+                     // 对齐规则（统计群体运动方向）
                      alignment += velocities[i];
                      
-                     // 凝聚规则
+                     // 凝聚规则（统计群体中心位置）
                      cohesion += neighborPos;
                      
                      neighborCount++;
@@ -104,10 +103,11 @@ public partial struct FishSchoolSystem : ISystem
              // 计算行为合力
              if (neighborCount > 0)
              {
+                 separation /= neighborCount;
                  alignment = (alignment / neighborCount) - movementData.velocity;
                  cohesion = math.normalize((cohesion / neighborCount) - currentPos);
-                 separation /= neighborCount;
              }
+             // 计算向量合力
              float2 acceleration = separation * separationWeight + 
                                    alignment * alignmentWeight + 
                                    cohesion * cohesionWeight;
