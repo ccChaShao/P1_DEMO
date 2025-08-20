@@ -7,7 +7,6 @@ using UnityEngine;
 [System.Serializable]
 public struct IFishData : IComponentData {
     public float speed;                 // 移动速度
-    public float rotationSpeed;         // 转向速度
     public float perceptionRadius;      // 感知半径（邻居检测范围）
 }
 
@@ -17,11 +16,17 @@ public struct IFishMovementData : IComponentData {
 
 public struct IFishTag : IComponentData { }
 
+// 鱼群生成指令
 public struct IFishSpawnerData : IComponentData
 {
     public int spawnerCount;
+    public float separationWeight;
+    public float alignmentWeight;
+    public float cohesionWeight;
 }
 
+// 鱼群销毁指令
+public struct IFishClearData : IComponentData { }
 
 public class FishAuthoring : MonoBehaviour
 {

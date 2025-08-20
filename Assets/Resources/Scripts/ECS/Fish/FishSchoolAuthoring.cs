@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
 
+/// <summary>
+/// 鱼群单例数据
+/// </summary>
 public struct IFishSchool : IComponentData
 {
     public Entity prefab;
+    public float separationWeight;
+    public float alignmentWeight;
+    public float cohesionWeight;
 }
 
 public class FishSchoolAuthoring : MonoBehaviour
 {
     public GameObject fishPrefab;
+    
+    public float separationWeight = 4.0f;
+    public float alignmentWeight = 1.0f;
+    public float cohesionWeight = 0.5f;
 
     class Baker : Baker<FishSchoolAuthoring>
     {
@@ -20,6 +30,9 @@ public class FishSchoolAuthoring : MonoBehaviour
             AddComponent(entity, new IFishSchool
             {
                 prefab = GetEntity(authoring.fishPrefab, TransformUsageFlags.Dynamic),
+                separationWeight = authoring.separationWeight,
+                alignmentWeight = authoring.alignmentWeight,
+                cohesionWeight = authoring.cohesionWeight,
             });
         }
     }

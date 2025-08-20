@@ -10,10 +10,17 @@ using UnityEngine;
 public partial struct FishSchoolSystem : ISystem
 {
     [BurstCompile]
+    public void OnCreate(ref SystemState state)
+    {
+        state.RequireForUpdate<IFishSchool>();
+    }
+    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         float deltaTime = SystemAPI.Time.DeltaTime;
         int entityCount = SystemAPI.QueryBuilder().WithAll<IFishTag>().Build().CalculateEntityCount();
+        
+        IFishSchool fishSchool = SystemAPI.GetSingleton<IFishSchool>();
 
         float3 leaderPosition = float3.zero;
         foreach (var (character, move, transform, entity) in SystemAPI
@@ -33,9 +40,9 @@ public partial struct FishSchoolSystem : ISystem
             positions = positions,
             velocities = velocities,
             // 后续配置
-            separationWeight = 4.0f,
-            alignmentWeight = 1.0f,
-            cohesionWeight = 0.5f
+            separationWeight = fishSchool.separationWeight,
+            alignmentWeight = fishSchool.alignmentWeight,
+            cohesionWeight = fishSchool.cohesionWeight
         };
         job.ScheduleParallel();
         
