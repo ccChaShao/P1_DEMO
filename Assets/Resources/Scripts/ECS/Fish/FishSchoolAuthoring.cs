@@ -9,6 +9,9 @@ using UnityEngine;
 public struct IFishSchool : IComponentData
 {
     public Entity prefab;
+    
+    public float leaderWeight;
+    
     public float separationWeight;
     public float alignmentWeight;
     public float cohesionWeight;
@@ -17,6 +20,8 @@ public struct IFishSchool : IComponentData
 public class FishSchoolAuthoring : MonoBehaviour
 {
     public GameObject fishPrefab;
+
+    public float leaderWeight = 10.0f;
     
     public float separationWeight = 4.0f;
     public float alignmentWeight = 1.0f;
@@ -30,6 +35,7 @@ public class FishSchoolAuthoring : MonoBehaviour
             AddComponent(entity, new IFishSchool
             {
                 prefab = GetEntity(authoring.fishPrefab, TransformUsageFlags.Dynamic),
+                leaderWeight = authoring.leaderWeight,
                 separationWeight = authoring.separationWeight,
                 alignmentWeight = authoring.alignmentWeight,
                 cohesionWeight = authoring.cohesionWeight,

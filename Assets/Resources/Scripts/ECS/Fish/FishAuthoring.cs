@@ -20,6 +20,9 @@ public struct IFishTag : IComponentData { }
 public struct IFishSpawnerData : IComponentData
 {
     public int spawnerCount;
+
+    public float leaderWeight;
+    
     public float separationWeight;
     public float alignmentWeight;
     public float cohesionWeight;

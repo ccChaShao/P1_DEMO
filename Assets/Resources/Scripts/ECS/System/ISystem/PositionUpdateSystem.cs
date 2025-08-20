@@ -28,10 +28,10 @@ public partial struct PositionUpdateSystem : ISystem {
             // transform.Rotation = quaternion.RotateZ(angle);
             
             // 边界处理（假设屏幕范围：x: [-50,50], y: [-30,30]）
-            float2 pos = newPosition;
-            if (math.abs(pos.x) > 100f) pos.x = -math.sign(pos.x) * 100f;
-            if (math.abs(pos.y) > 50f) pos.y = -math.sign(pos.y) * 50f;
-            transform.Position = new float3(pos, 0);
+            // float2 pos = newPosition;
+            // if (math.abs(pos.x) > 100f) pos.x = -math.sign(pos.x) * 100f;
+            // if (math.abs(pos.y) > 50f) pos.y = -math.sign(pos.y) * 50f;
+            // transform.Position = new float3(pos, 0);
         }
     }
 }

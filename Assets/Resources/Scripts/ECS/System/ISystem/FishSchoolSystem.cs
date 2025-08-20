@@ -39,6 +39,7 @@ public partial struct FishSchoolSystem : ISystem
             deltaTime = deltaTime,
             positions = positions,
             velocities = velocities,
+            leaderWeight = fishSchool.leaderWeight,
             separationWeight = fishSchool.separationWeight,
             alignmentWeight = fishSchool.alignmentWeight,
             cohesionWeight = fishSchool.cohesionWeight
@@ -57,6 +58,7 @@ public partial struct FishSchoolSystem : ISystem
     public partial struct FishBehaviorJob : IJobEntity
     {
         public float deltaTime;
+        public float leaderWeight;
         public float2 leaderPosition;
         [ReadOnly] public NativeArray<float3> positions;
         [ReadOnly] public NativeArray<float2> velocities;
@@ -113,7 +115,7 @@ public partial struct FishSchoolSystem : ISystem
                                    cohesion * cohesionWeight;
              
              float2 leaderDir = leaderPosition - currentPos;
-             acceleration += math.normalize(leaderDir) * 10;
+             acceleration += math.normalize(leaderDir) * leaderWeight;
             
              // 更新速度
              movementData.velocity += acceleration * deltaTime;

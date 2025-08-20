@@ -37,7 +37,7 @@ partial struct FishSpawnerSystem : ISystem
             
             // 位置更新
             for (int i = 0; i < entities.Length; i++) {
-                 var position = new float3(Random.Range(-100, 100), Random.Range(-50, 50), 0);
+                 var position = new float3(Random.Range(-200, 200), Random.Range(-100, 100), 0);
                  SystemAPI.SetComponent(entities[i], new LocalTransform {
                      Position = position,
                      Rotation = quaternion.identity,

@@ -98,6 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishData:
-    speed: 10
-    rotationSpeed: 0
-    perceptionRadius: 50
+    speed: 20
+    perceptionRadius: 100
